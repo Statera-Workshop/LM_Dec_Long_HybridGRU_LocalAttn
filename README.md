@@ -4,8 +4,8 @@ HybridGRU_LocalAttn - Long family, decoder-only byte-level language model, stand
 
 ## Status
 
-- Verification level: **Runnable**
-- Failure class: Implementation Unverified: overfit check not passed
+- Verification level: **Benchmarked (2 seed-repeat runs, see results)**
+- Failure class: Note: really bounded memory (498 MB at 8192); length-general state tracking (0.84-0.87 short, 0.94-0.96 long); no recall or update beyond the window
 
 ## Provenance
 
@@ -22,6 +22,17 @@ All models share one protocol: 256-byte vocabulary, dim 512, 6 layers, 8 heads x
 
 - Parameters: 20.74 M
 - Causality check: pass (largest change of earlier outputs 0.0e+00)
+- Overfit check (4 x 256 bytes): 5.695 -> 0.001 nats, pass
+- LM-02 enwik8 (200M tokens): valid 1.407 / test 1.395 bits per byte
+- LM-02 enwik8 (1B tokens): valid 1.333 / test 1.332 bits per byte
+- Peak GPU memory at length 2048 (batch 1): train 662 MB, inference 151 MB
+- Peak GPU memory at length 8192 (batch 1): train 2496 MB, inference 498 MB
+- LM-05 recall `lm05v3`: 4 pairs @ 512: 0.27 (keys removed 0.22); 4 pairs @ 2048: 0.01 (keys removed 0.01); 16 pairs @ 512: 0.07 (keys removed 0.07); 16 pairs @ 2048: 0.02 (keys removed 0.02)
+- LM-05 recall `lm05v3long`: 4 pairs @ 512: 0.61 (keys removed 0.25); 4 pairs @ 2048: 0.02 (keys removed 0.03); 4 pairs @ 8192: 0.01 (keys removed 0.01); 16 pairs @ 512: 1.00 (keys removed 0.02); 16 pairs @ 2048: 0.02 (keys removed 0.02); 16 pairs @ 8192: 0.02 (keys removed 0.01)
+- LM-05 recall `lm05v3s2`: 4 pairs @ 512: 0.23 (keys removed 0.25); 4 pairs @ 2048: 0.02 (keys removed 0.01); 16 pairs @ 512: 0.16 (keys removed 0.06); 16 pairs @ 2048: 0.02 (keys removed 0.02)
+- LM-06 memory update `lm06`: @512: latest 1.00, unchanged 0.81, stale 0.00; @2048: latest 0.06, unchanged 0.01, stale 0.01
+- LM-06 memory update `lm06long`: @512: latest 1.00, unchanged 1.00, stale 0.00; @2048: latest 0.06, unchanged 0.01, stale 0.01; @8192: latest 0.02, unchanged 0.01, stale 0.02
+- LM-06 memory update `lm06s2`: @512: latest 0.99, unchanged 0.81, stale 0.00; @2048: latest 0.06, unchanged 0.01, stale 0.01
 
 ## Tests
 

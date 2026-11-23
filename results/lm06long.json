@@ -1,0 +1,427 @@
+{
+ "model": "hyb_gru_local",
+ "repo": "(new) lucidrains/local-attention",
+ "target_repo": "LM_Dec_Long_HybridGRU_LocalAttn",
+ "category": "Long",
+ "upstream": "lucidrains/local-attention (MIT)",
+ "unified": [
+  "GRU layer + 6 blocked sliding-window (256) rotary attention layers from local-attention (real bounded memory)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm06long",
+ "started": "2026-11-18 02:25:47",
+ "smoke": false,
+ "steps": 30000,
+ "capped": false,
+ "diverged": false,
+ "bf16": true,
+ "final_loss": 1.795109528757166e-05,
+ "minutes": 125.6,
+ "history": [
+  {
+   "step": 2500,
+   "loss": 2.292454481124878,
+   "acc": 0.26953125,
+   "acc_updated": 0.484375,
+   "acc_unchanged": 0.0546875,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     0.304,
+     23
+    ],
+    "256-1024": [
+     0.266,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 5000,
+   "loss": 0.08694079518318176,
+   "acc": 0.83203125,
+   "acc_updated": 0.9609375,
+   "acc_unchanged": 0.703125,
+   "stale_rate": 0.0390625,
+   "by_distance": {
+    "0-256": [
+     0.957,
+     23
+    ],
+    "256-1024": [
+     0.82,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 7500,
+   "loss": 0.001603303593583405,
+   "acc": 0.9453125,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.890625,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.94,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 10000,
+   "loss": 0.005982060916721821,
+   "acc": 0.9921875,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.984375,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.991,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 12500,
+   "loss": 0.000932651455514133,
+   "acc": 0.98828125,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.9765625,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.987,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 15000,
+   "loss": 0.00010792929970193654,
+   "acc": 0.98046875,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.9609375,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.979,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 17500,
+   "loss": 0.0021481458097696304,
+   "acc": 0.984375,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.96875,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.983,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 20000,
+   "loss": 2.1802092305733822e-05,
+   "acc": 0.98828125,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.9765625,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.987,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 22500,
+   "loss": 4.047177571919747e-05,
+   "acc": 0.9921875,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.984375,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.991,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 25000,
+   "loss": 2.8224736524862237e-05,
+   "acc": 0.98828125,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.9765625,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.987,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 27500,
+   "loss": 0.0002807564160320908,
+   "acc": 0.99609375,
+   "acc_updated": 0.9921875,
+   "acc_unchanged": 1.0,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.996,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  {
+   "step": 30000,
+   "loss": 1.795109528757166e-05,
+   "acc": 0.99609375,
+   "acc_updated": 1.0,
+   "acc_unchanged": 0.9921875,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     23
+    ],
+    "256-1024": [
+     0.996,
+     233
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  }
+ ],
+ "test": {
+  "512": {
+   "acc": 0.9970703125,
+   "acc_updated": 0.998046875,
+   "acc_unchanged": 0.99609375,
+   "stale_rate": 0.0,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     195
+    ],
+    "256-1024": [
+     0.997,
+     1853
+    ],
+    "1024-4096": [
+     null,
+     0
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  "2048": {
+   "acc": 0.03857421875,
+   "acc_updated": 0.0625,
+   "acc_unchanged": 0.0146484375,
+   "stale_rate": 0.0146484375,
+   "by_distance": {
+    "0-256": [
+     1.0,
+     4
+    ],
+    "256-1024": [
+     0.241,
+     203
+    ],
+    "1024-4096": [
+     0.014,
+     1841
+    ],
+    "4096-inf": [
+     null,
+     0
+    ]
+   }
+  },
+  "8192": {
+   "acc": 0.01806640625,
+   "acc_updated": 0.0234375,
+   "acc_unchanged": 0.0126953125,
+   "stale_rate": 0.017578125,
+   "by_distance": {
+    "0-256": [
+     null,
+     0
+    ],
+    "256-1024": [
+     0.571,
+     7
+    ],
+    "1024-4096": [
+     0.021,
+     190
+    ],
+    "4096-inf": [
+     0.016,
+     1851
+    ]
+   }
+  }
+ },
+ "config": {
+  "pairs": 8,
+  "updates": 4,
+  "queries": 4,
+  "train_len": 512,
+  "test_lens": [
+   512,
+   2048,
+   8192
+  ],
+  "batch": 32,
+  "steps": 30000,
+  "eval_every": 2500,
+  "eval_samples": 512,
+  "max_hours": 5.0
+ },
+ "micro_batch": null,
+ "seconds": 7535.5
+}
